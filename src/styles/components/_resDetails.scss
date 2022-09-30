@@ -1,0 +1,32 @@
+.resDetailsContainer {
+    display: flex;
+    justify-content: flex-start;
+    & p {
+        margin: 20px;
+    }
+    & .bg-black {
+        background-color: black;
+        padding: 18px;
+        color: white;
+        width: 200px;
+    }
+
+    & .dynamicColor {
+        width: 200px;
+        color: white;
+        padding: 18px;
+    }
+}
+
+.fa-solid {
+    margin-right: 35px;
+    margin-left: 18px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 660px) {
+    .resDetailsContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+}

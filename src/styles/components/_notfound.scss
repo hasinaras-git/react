@@ -1,0 +1,12 @@
+.notfoundContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    & h2 {
+        font-size: 80px;
+    }
+    & a {
+        text-decoration: none;
+        color: rgb(74, 152, 216)
+    }
+}

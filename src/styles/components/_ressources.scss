@@ -1,0 +1,27 @@
+.selectContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+    margin-bottom: 25px;
+    & select {
+        border: unset;
+        background: none;
+        height: 38px;
+    }
+    & p {
+        margin: 2px 15px;
+    }
+}
+
+.resContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+@media screen and (max-width: 775px) {
+    .resContainer {
+        justify-content: center;
+    }
+}
