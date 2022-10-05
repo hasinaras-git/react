@@ -5,7 +5,6 @@ function NavLink(props) {
     const [ isActive, setIsActive ] = useState('user');
 
     const toggleClassName = (data) => (e) => {
-        // data === 'user'? setIsActive('user') : setIsActive('res');
         setIsActive(data)
     }
 
