@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { FC } from 'react';
+import * as React from 'react';
 import { Link } from 'react-router-dom';
 
-function NavLink(props) {
+const NavLink: FC = (props) => {
     const [ isActive, setIsActive ] = useState('user');
 
-    const toggleClassName = (data) => (e) => {
+    const toggleClassName = (data: string) => (e: any) => {
         setIsActive(data)
     }
 

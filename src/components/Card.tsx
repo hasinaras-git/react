@@ -1,7 +1,15 @@
-import React from 'react';
+import * as React from 'react';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
-function Card({ user, email, imgPath }) {
+interface ICardProps {
+    user: any;
+    email: string;
+    imgPath: string;
+}
+
+const Card: FC<ICardProps> = (props: any) => {
+    const { email, user, imgPath } = props as ICardProps;
     return (
         <div className='card' >
             <img src={imgPath} alt={user.first_name} />

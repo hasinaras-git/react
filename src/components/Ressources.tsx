@@ -1,16 +1,21 @@
-import { useState } from 'react';
+import { useState, FC } from 'react';
 import Paper from './Paper';
 
-function Ressources({ data }) {
+interface IRessourceProps {
+    data: any;
+}
+
+const Ressources: FC<IRessourceProps> = (props: IRessourceProps) => {
+    const { data } = props;
     const [ optionValue, setOptionValue ] = useState('');
     const [ sorted, setSorted ] = useState(data);
 
-    const handleChange = (e) => {
+    const handleChange = (e: any) => {
         if (e.target.value === 'name') {
-            setSorted(data.slice().sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase())))
+            setSorted(data.slice().sort((a: any, b: any) => a.name.toLowerCase().localeCompare(b.name.toLowerCase())))
         }
         else if (e.target.value === "date") {
-            setSorted(data.slice().sort((a, b) => b.year - a.year))
+            setSorted(data.slice().sort((a: any, b: any) => b.year - a.year))
         } else {
             setSorted(data)
         }
@@ -32,7 +37,7 @@ function Ressources({ data }) {
             </div>
             <div className='resContainer'>
                 {
-                    sorted.map((ressource) => {
+                    sorted.map((ressource: any) => {
                         return (
                             <Paper
                                 res={ressource}
