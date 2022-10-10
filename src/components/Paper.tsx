@@ -1,7 +1,13 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import { FC } from 'react'
 
-function Paper({ res }) {
+interface IPaperProps {
+  res: any;
+}
+
+const Paper: FC<IPaperProps> = (props: IPaperProps) => {
+  const { res } = props;
     const navigate = useNavigate();
 
     return (

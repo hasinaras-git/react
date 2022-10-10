@@ -1,4 +1,5 @@
 import './styles/index.scss';
+import * as React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import User from "./components/User";
 import Ressources from "./components/Ressources";
@@ -24,12 +25,12 @@ function App() {
 
             const { data } = await axios.get('https://reqres.in/api/unknown');
             setRessources(data.data);
-        } catch(error) {
+        } catch(error: any) {
             console.log(error.message);
         }
     }
     fetchUser();
-}, []);
+  }, []);
 
   return (
     <div className="App">
@@ -37,9 +38,9 @@ function App() {
         <NavLink />
         <Routes>
             <Route path="/" element={<User users={users}/>} />
-            <Route exact path="/user" element={<User users={users}/>} />
-            <Route exact path="/ressources" element={<Ressources data={ressources}/>} />
-            <Route exat path='/ressources/details/:resId' element={<RessourceDetails allRes={ressources}/>} />
+            <Route path="/user" element={<User users={users}/>} />
+            <Route path="/ressources" element={<Ressources data={ressources}/>} />
+            <Route path='/ressources/details/:resId' element={<RessourceDetails allRes={ressources}/>} />
             <Route path="/user/details/:id" element={<UserDetails users={users} />} />
             <Route path="*" element={<NotFound />} />
         </Routes>

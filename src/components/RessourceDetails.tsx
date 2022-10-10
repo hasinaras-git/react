@@ -1,14 +1,26 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, FC } from 'react';
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 
-function RessourceDetails({ allRes }) {
+interface IRes {
+    color: string;
+    pantone_value: string;
+    year: string;
+    name: string;
+}
+
+interface IResDetailsProps {
+    allRes: IRes[]
+}
+
+const RessourceDetails: FC<IResDetailsProps> = (props: IResDetailsProps) => {
+    const { allRes } = props;
     const { resId } = useParams();
-    const [ res, setRes ] = useState({});
+    const [ res, setRes ] = useState({} as IRes);
     const navigate = useNavigate();
 
     useEffect(() => {
-        const singleRes = allRes.filter((item) => item.id.toString() === resId)
+        const singleRes = allRes.filter((item: any) => item.id.toString() === resId)
         setRes(singleRes[0]);
     }, [allRes, resId]);
 

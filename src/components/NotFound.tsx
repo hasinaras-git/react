@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function NotFound(props) {
+function NotFound() {
     return (
         <div className='container notfoundContainer'>
             <h2>404 <br/> NOT FOUND</h2>
